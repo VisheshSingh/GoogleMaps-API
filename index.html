@@ -41,13 +41,27 @@
         marker.addListener('click', function(){
             infoWindow.open(map, marker);
         }); */
-        addMarker({
+
+        // Array of markers
+        var markers = [{
             coords:{lat:40.7831, lng:-73.9712},
             iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
             content:'<h1>Manhattan, NY</h1>'
-        });
-        addMarker({coords:{lat:40.3573, lng:-74.6672}});
-        addMarker({coords:{lat:40.7891, lng:-73.1350}});
+        },
+        {
+            coords:{lat:40.3573, lng:-74.6672},
+            content:'<h1>Princeton, NJ</h1>'
+        },
+        {
+            coords:{lat:40.7891, lng:-73.1350},
+            content:'<h1>Long Island, NY</h1>'
+        }];
+
+        // Loop thru the marker
+        for(var i=0; i< markers.length; i++) {
+            addMarker(markers[i]);
+        }
+        
         // ADD MARKER
         function addMarker(props) {
             var marker = new google.maps.Marker({
