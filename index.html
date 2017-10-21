@@ -26,6 +26,11 @@
         //New Map
         var map = new google.maps.Map(document.getElementById('map'), options);
 
+        //Listen for a click on map
+        google.maps.event.addListener(map, 'click', function(e) {
+            addMarker({coords:e.latLng});
+        });
+
         //Add Marker
         /* var marker = new google.maps.Marker({
           position:{lat:40.7831, lng:-73.9712},
