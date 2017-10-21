@@ -41,15 +41,19 @@
         marker.addListener('click', function(){
             infoWindow.open(map, marker);
         }); */
-        addMarker({lat:40.7831, lng:-73.9712});
-        addMarker({lat:40.3573, lng:-74.6672});
-        addMarker({lat:40.7891, lng:-73.1350});
+        addMarker({
+            coords:{lat:40.7831, lng:-73.9712},
+            iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            }
+        );
+        addMarker({coords:{lat:40.3573, lng:-74.6672}});
+        addMarker({coords:{lat:40.7891, lng:-73.1350}});
         // ADD MARKER
-        function addMarker(coords) {
+        function addMarker(props) {
             var marker = new google.maps.Marker({
-            position:coords,
+            position:props.coords,
             map: map,
-            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            icon: props.iconImage
             });
         }
       }
