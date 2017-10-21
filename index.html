@@ -27,20 +27,31 @@
         var map = new google.maps.Map(document.getElementById('map'), options);
 
         //Add Marker
-        var marker = new google.maps.Marker({
-          position:{lat:40.7128, lng:-74.0060},
+        /* var marker = new google.maps.Marker({
+          position:{lat:40.7831, lng:-73.9712},
           map: map,
           icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
         });
 
         //INFO WINDOW
         var infoWindow = new google.maps.InfoWindow({
-            content: '<h1>New York City</h1>'
+            content: '<h1>Manhattan, NY</h1>'
         });
 
         marker.addListener('click', function(){
             infoWindow.open(map, marker);
-        });
+        }); */
+        addMarker({lat:40.7831, lng:-73.9712});
+        addMarker({lat:40.3573, lng:-74.6672});
+        addMarker({lat:40.7891, lng:-73.1350});
+        // ADD MARKER
+        function addMarker(coords) {
+            var marker = new google.maps.Marker({
+            position:coords,
+            map: map,
+            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+            });
+        }
       }
     </script>
     <script async defer
